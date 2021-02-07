@@ -1,0 +1,11 @@
+C:\Users\furka\source\repos\Wired\Wired.Data\bin\Debug\netcoreapp3.1\Wired.Data.deps.json
+C:\Users\furka\source\repos\Wired\Wired.Data\bin\Debug\netcoreapp3.1\Wired.Data.runtimeconfig.json
+C:\Users\furka\source\repos\Wired\Wired.Data\bin\Debug\netcoreapp3.1\Wired.Data.runtimeconfig.dev.json
+C:\Users\furka\source\repos\Wired\Wired.Data\bin\Debug\netcoreapp3.1\Wired.Data.dll
+C:\Users\furka\source\repos\Wired\Wired.Data\bin\Debug\netcoreapp3.1\Wired.Data.pdb
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.AssemblyInfoInputs.cache
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.AssemblyInfo.cs
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.csproj.CoreCompileInputs.cache
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.dll
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.pdb
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.genruntimeconfig.cache

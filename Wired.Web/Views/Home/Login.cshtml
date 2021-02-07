@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <form class="form-signin col-md-4" style="margin:0px auto">
+        <img class="mb-4" src="https://pbs.twimg.com/profile_images/1254006853756956674/MOAOo4yH_400x400.jpg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" style="margin-top:10px">
+        <br />
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    </form>
+
+
+</body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('#btnSignIn').click(function (e) {
+            e.preventDefault();
+            alert("click");
+            var serviceUrl = "https://localhost:44326/auth/login";
+            var user = {
+                Email: $('#inputEmail').val(),
+                Password: $('#inputPassword').val(),
+            };
+
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                url: serviceUrl,
+                type: "POST",
+                data: JSON.stringify(user),
+                dataType: "json",
+
+                success: function (token) {
+                    localStorage.setItem("token", JSON.stringify(token));
+                    window.location.href = "https://localhost:44326/home/index"
+                },
+                error: function (error) {
+                    alert("Kullanıcı adı veya şifre hatalı.")
+                },
+            });
+
+        });
+    });
+</script>

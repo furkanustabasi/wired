@@ -1,0 +1,118 @@
+﻿@using Wired.Service.Models.Response
+@{
+    ViewData["Title"] = "Home Page";
+    var myArticle = (ArticleResponseModel)ViewData["myArticle"];
+    var myQuestions = (QuestionResponseModel)ViewData["myQuestions"];
+    var myOptions = (OptionResponseModel)ViewData["myOptions"];
+
+    string[] q = new string[4];
+    string[] a = new string[4];
+    int counter = 0;
+    foreach (var item in myQuestions.Questions)
+    {
+        q[counter] = item.Contect;
+        a[counter] = item.Answer;
+        counter = counter + 1;
+    }
+
+    int count = 0;
+}
+<div>
+    <div class="container" style="width:initial">
+        <h1 style="text-align:center">
+            @myArticle.Title
+        </h1>
+        <div class="align-content-around">
+            <p style="font-size:large; margin-top:1em; border:1px solid #c3c3c3; padding:15px" class="display-4">
+                @myArticle.Contect
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div class="text-center" style="margin-top:2em">
+        <div class="text-center" style="margin-top:2em">
+            <div class="col-md-6 float-left">
+                <p style="font-size:large" class="display-4">@q[0]</p>
+                @foreach (var option in myOptions.Options1)
+                {
+                    <div id="options">
+                        <div id="@("a"+count)" class="alert alert-secondary" role="alert">
+                            @option.Description
+                        </div>
+                    </div>
+                    count = count + 1;
+                }
+            </div>
+        </div>
+        <div class="text-center" style="margin-top:2em">
+            <div class="col-md-6 float-left">
+                <p style="font-size:large" class="display-4">@q[1]</p>
+                @foreach (var option in myOptions.Options2)
+                {
+                    <div id="options">
+                        <div id="@("b"+count)" class="alert alert-secondary" role="alert">
+                            @option.Description
+                        </div>
+                    </div>
+                    count = count + 1;
+                }
+            </div>
+        </div>
+        <br />
+        <div class="text-center" style="margin-top:2em">
+            <div class="col-md-6 float-left">
+                <p style="font-size:large" class="display-4">@q[2]</p>
+                @foreach (var option in myOptions.Options3)
+                {
+                    <div id="options">
+                        <div id="@("c"+count)" class="alert alert-secondary" role="alert">
+                            @option.Description
+                        </div>
+                    </div>
+                    count = count + 1;
+                }
+            </div>
+        </div>
+        <div class="text-center" style="margin-top:2em">
+            <div class="col-md-6 float-left">
+                <p style="font-size:large" class="display-4">@q[3]</p>
+                @foreach (var option in myOptions.Options4)
+                {
+                    <div id="options">
+                        <div id="@("d"+count)" class="alert alert-secondary" role="alert">
+                            @option.Description
+                        </div>
+                    </div>
+                    count = count + 1;
+                }
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="text-center">
+        <button class="btn btn-primary">Sınavı Tamamla</button>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+
+    });
+
+    $("#options").click(function (event) {
+        $.ajax({
+            type: "POST",
+            url: "/home/result?textId=5",
+            dataType: "json",
+            success: function (data) {
+
+            }
+        });
+        var answer = event.target.id.replace('option', '');
+        if (answer === 'A') {
+            $("#optionA").css("background-color", "rgba(0, 230, 64, 1)");
+        }
+    });
+</script>

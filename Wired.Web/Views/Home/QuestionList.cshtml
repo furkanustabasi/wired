@@ -1,0 +1,76 @@
+﻿@using Wired.Service.Models.Response
+@{
+    ViewData["Title"] = "Privacy Policy";
+    int i = 0;
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Signin Template for Bootstrap</title>
+
+</head>
+
+<body class="text-center">
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="Table" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="col-1">#</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableBody">
+                        @foreach (var entity in (List<QuestionListResponseModel>)ViewData["myResponse"])
+                        {
+                        <tr [class.bg-secondary]="p.isActive==false">
+                            <td>@(i+1)</td>
+                            <td>@entity.Title</td>
+                            <td>@entity.CreatedDate</td>
+                            <td>
+                                <button value="@entity.Guid" id="@i" class="btn btn-danger">Sil</button>
+                            </td>
+                        </tr>
+                            i = i + 1;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        alert("asdlasjdl");
+        debugger;
+        var questionListUrl = "https://localhost:44326/home/questionlist";
+
+        var guid = "";
+
+        $("button").click(function () {
+            guid = $(this).attr('value');
+            debugger;
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                type: "POST",
+                url: questionListUrl,
+                dataType=text,
+                data: guid,
+                success: function () {
+                    console.log(guid);
+                }
+            });
+        });
+    });
+
+
+</script>

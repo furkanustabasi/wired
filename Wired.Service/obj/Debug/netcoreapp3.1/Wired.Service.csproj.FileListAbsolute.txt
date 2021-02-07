@@ -1,0 +1,12 @@
+C:\Users\furka\source\repos\Wired\Wired.Service\bin\Debug\netcoreapp3.1\Wired.Service.deps.json
+C:\Users\furka\source\repos\Wired\Wired.Service\bin\Debug\netcoreapp3.1\Wired.Service.dll
+C:\Users\furka\source\repos\Wired\Wired.Service\bin\Debug\netcoreapp3.1\Wired.Service.pdb
+C:\Users\furka\source\repos\Wired\Wired.Service\bin\Debug\netcoreapp3.1\Wired.Data.dll
+C:\Users\furka\source\repos\Wired\Wired.Service\bin\Debug\netcoreapp3.1\Wired.Data.pdb
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.csprojAssemblyReference.cache
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.AssemblyInfoInputs.cache
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.AssemblyInfo.cs
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.csproj.CoreCompileInputs.cache
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.csproj.CopyComplete
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.dll
+C:\Users\furka\source\repos\Wired\Wired.Service\obj\Debug\netcoreapp3.1\Wired.Service.pdb
