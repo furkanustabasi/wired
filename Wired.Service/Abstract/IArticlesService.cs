@@ -8,5 +8,6 @@ namespace Wired.Service.Abstract
         List<QuestionListResponseModel> GetArticlesFromDb();
         BaseResponseModel Add(int index);
         ArticleResponseModel GetArticlesFromDb(string guid);
+        ArticleResponseModel InactiveArticleExam(string guid);
     }
 }

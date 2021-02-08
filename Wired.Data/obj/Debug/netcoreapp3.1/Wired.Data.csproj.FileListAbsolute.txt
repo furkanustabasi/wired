@@ -9,3 +9,4 @@ C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.
 C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.dll
 C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.pdb
 C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.genruntimeconfig.cache
+C:\Users\furka\source\repos\Wired\Wired.Data\obj\Debug\netcoreapp3.1\Wired.Data.csprojAssemblyReference.cache

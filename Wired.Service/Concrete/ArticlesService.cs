@@ -80,5 +80,19 @@ namespace Wired.Service.Concrete
             };
             return arModel;
         }
+
+        public ArticleResponseModel InactiveArticleExam(string guid)
+        {
+
+            var entity = _articleRepository.GetArticlesFromDb(guid);
+            entity.Status = false;
+
+            _articleRepository.Update(entity);
+
+            return new ArticleResponseModel
+            {
+                Id = entity.Id
+            };
+        }
     }
 }

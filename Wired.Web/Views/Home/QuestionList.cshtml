@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Privacy Policy";
     int i = 0;
+    var questionList = (List<QuestionListResponseModel>)ViewData["myResponse"];
 }
 <head>
     <meta charset="utf-8">
@@ -28,16 +29,16 @@
                         </tr>
                     </thead>
                     <tbody id="TableBody">
-                        @foreach (var entity in (List<QuestionListResponseModel>)ViewData["myResponse"])
+                        @foreach (var entity in questionList)
                         {
-                        <tr [class.bg-secondary]="p.isActive==false">
-                            <td>@(i+1)</td>
-                            <td>@entity.Title</td>
-                            <td>@entity.CreatedDate</td>
-                            <td>
-                                <button value="@entity.Guid" id="@i" class="btn btn-danger">Sil</button>
-                            </td>
-                        </tr>
+                            <tr [class.bg-secondary]="p.isActive==false">
+                                <td>@(i+1)</td>
+                                <td>@entity.Title</td>
+                                <td>@entity.CreatedDate</td>
+                                <td>
+                                    <button value="@entity.Guid" id="@i" class="btn btn-danger">Sil</button>
+                                </td>
+                            </tr>
                             i = i + 1;
                         }
                     </tbody>
@@ -50,27 +51,35 @@
 <script>
 
     $(document).ready(function () {
-        alert("asdlasjdl");
+        alert("asdasd");
         debugger;
         var questionListUrl = "https://localhost:44326/home/questionlist";
 
-        var guid = "";
+
 
         $("button").click(function () {
-            guid = $(this).attr('value');
-            debugger;
+
+            var guid = $(this).attr('value');
+
             $.ajax({
                 contentType: "application/json; charset=utf-8",
-                type: "POST",
                 url: questionListUrl,
-                dataType=text,
-                data: guid,
-                success: function () {
-                    console.log(guid);
-                }
+                type: "POST",
+                data: JSON.stringify(guid),
+                dataType: "json",
+                success: function (data) {
+                    debugger;
+                    if (data > 0) {
+                       // $(this).remove();
+                        location.href("https://localhost:44326/home/questionlist");
+                        alert("Kayıt başarılı bir şekilde silinmiştir.")
+                    }
+                },
+                error: function (error) {
+                    alert("Kayıt silinirken hata oluştu.");
+                    console.log(error);
+                },
             });
         });
     });
-
-
 </script>

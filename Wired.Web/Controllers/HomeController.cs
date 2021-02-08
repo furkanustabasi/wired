@@ -24,8 +24,6 @@ namespace Wired.Web.Controllers
         [Route("index")]
         public IActionResult Index()
         {
-
-
             return View();
         }
 
@@ -47,7 +45,6 @@ namespace Wired.Web.Controllers
             }
             catch (Exception exc)
             {
-
                 throw exc;
             }
         }
@@ -86,10 +83,12 @@ namespace Wired.Web.Controllers
                     ids[i] = item.Id;
                     i++;
                 }
+
                 var options = _optionsService.GetOptions(ids[0], ids[1], ids[2], ids[3]);
                 ViewData["myArticle"] = article;
                 ViewData["myQuestions"] = questions;
                 ViewData["myOptions"] = options;
+
                 return View();
             }
             catch (Exception exc)
@@ -98,22 +97,6 @@ namespace Wired.Web.Controllers
                 throw exc;
             }
         }
-
-        //[HttpGet]
-        //[Route("exams")]
-        //public IActionResult Exam()
-        //{
-        //    try
-        //    {
-        //        return View();
-        //    }
-        //    catch (Exception exc)
-        //    {
-
-        //        throw exc;
-        //    }
-        //}
-
 
         [HttpGet]
         [Route("questionlist")]
@@ -133,11 +116,15 @@ namespace Wired.Web.Controllers
 
         [HttpPost]
         [Route("questionlist")]
-        public IActionResult QuestionList([FromBody] string maNigga)
+        public IActionResult QuestionList([FromBody] string myGuid)
         {
             try
             {
-                return View();
+                var inActiveArticleId = _articlesService.InactiveArticleExam(myGuid);
+                var entity = _articlesService.GetArticlesFromDb();
+                ViewData["myResponse"] = entity;
+
+                return Ok(inActiveArticleId.Id);
             }
             catch (Exception exc)
             {

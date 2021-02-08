@@ -24,7 +24,6 @@ namespace Wired.Data.Repository
 
         public List<Article> GetArticlesFromDb()
         {
-
             return _wiredContext.Articles.Where(x => x.Status == true).Include("Questions")
                      .ToList();
 
